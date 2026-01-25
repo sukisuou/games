@@ -71,7 +71,6 @@ int main(){
             << "\t\t(Press X to exit)\n"
             << "Choice: "
         ;
-
         std::cin >> input;
 
         if(input == "x" || input == "X") break;
