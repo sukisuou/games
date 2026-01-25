@@ -72,7 +72,7 @@ int main(){
             << "Choice: "
         ;
 
-        std::getline(std::cin, input);
+        std::cin >> input;
 
         if(input == "x" || input == "X") break;
         int choice = std::stoi(input);
