@@ -11,10 +11,10 @@ static std::mt19937 rng(std::random_device{}());
 
 //ref
 const std::string shape[4] = {
-    Color::bg_black + " \u2664  Spade ",
-    Color::bg_red   + " \u2661  Heart ",
-    Color::bg_black + " \u2667  Clover",
-    Color::bg_red   + " \u2662 Diamond"
+    Color::bg_black + " \u2664",    //spade
+    Color::bg_red   + " \u2661",    //heart
+    Color::bg_black + " \u2667",    //clover
+    Color::bg_red   + " \u2662"     //diamond
 };
 const std::string num[13] = {
     " A ", " 2 ", " 3 ", " 4 " , " 5 ", " 6 ", " 7 ", " 8 ", " 9 ", "10 ", " J ", " Q ", " K "
@@ -49,7 +49,7 @@ void show(Deck cards){
     std::cout << "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
     for(int i = 0; i < 26; ++i){
         if(i != 0 && i % 13 == 0) std::cout << '\n';
-        std::cout << cards.deck[i] << "\t\t" << cards.deck[i + 26] << Color::clear << "\n";
+        std::cout << cards.deck[i] << '\t' << cards.deck[i + 26] << Color::clear << "\n";
     }
     std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
 }
