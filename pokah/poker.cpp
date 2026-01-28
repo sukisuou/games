@@ -75,7 +75,7 @@ int main(){
             << "\t\t(Press X to exit)\n"
             << "Choice: "
         ;
-        std::cin >> input; std::cin.ignore();
+        std::getline(std::cin, input);
         
         if(input[0] == 'x' || input[0] == 'X') break;
         try{
