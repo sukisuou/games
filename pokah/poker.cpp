@@ -2,7 +2,7 @@
 #include <string>
 #include <cstring>
 #include <random>
-#include "../../Color.h"
+#include "../Color.h"
 #include <Windows.h>
 
 //randomizer
