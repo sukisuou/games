@@ -7,7 +7,8 @@
 #include <windows.h>
 
 const char* packet = "E";   //character to accept in the listener
-DWORD baudrate = 115200;    //Match your ESP32 Serial.begin(baudrate)
+const char* packetLose = "Z";
+DWORD baudrate = 115200;    //match your ESP32 Serial.begin(baudrate)
 
 HANDLE hSerial;
 
@@ -26,6 +27,11 @@ void initSerial(const char* portName) {
 void sendEatSignal() {
     DWORD bytesWritten;
     WriteFile(hSerial, packet, 1, &bytesWritten, NULL);
+}
+
+void sendGameOverSignal(){
+    DWORD bytesWritten;
+    WriteFile(hSerial, packetLose, 1, &bytesWritten, NULL);
 }
 
 void closeSerial() {
@@ -290,7 +296,10 @@ int main(){
         }
 
         //game over
-        if(gameOver) break;
+        if(gameOver){
+            sendGameOverSignal();
+            break;
+        }
 
         glfwSwapBuffers(window);
         glfwPollEvents();
