@@ -3,7 +3,7 @@
 #include <cmath>
 #include <random>
 
-//serial bridging handler
+//serial bridging handler - embedded system and interprocess communication (ipc)
 #include <windows.h>
 
 const char* packet = "E";   //character to accept in the listener
