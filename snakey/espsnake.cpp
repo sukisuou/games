@@ -205,7 +205,7 @@ void placeApple(){
 int main(){
     //connect to esp32
     initSerial("\\\\.\\COM3"); 
-
+    
     if (hSerial == INVALID_HANDLE_VALUE){
         std::cerr << "CRITICAL ERROR: Could not open ESP32 on COM3!" << std::endl;
         std::cerr << "(Tips: Turn off IDE or anything else distrupting the file.)" << std::endl;
